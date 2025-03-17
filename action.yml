@@ -18,5 +18,5 @@ runs:
   using: 'composite'
   steps:
     - name: "Run python"
-      run: "python -m main"
+      run: "python main.py"
       shell: bash
