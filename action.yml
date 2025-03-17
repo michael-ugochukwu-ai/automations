@@ -1,0 +1,21 @@
+name: Close jira ticket
+author: Michael Ugochukwu
+description: Closes a jira ticket associated with this PR upon merge
+inputs:
+  ticket-link:
+    description: 'The link of the ticket'
+    requried: True
+  jira-user:
+    description: The Jira user that will perform the action of closing the ticket
+    required: True
+  jira-url:
+    description: The url to your jira ticket
+    required: True
+  jira-token:
+    description: An auth token for the jira user
+    required: True
+runs:
+  using: 'python'
+  main: 'main.py'
+  
+  
