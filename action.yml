@@ -25,5 +25,5 @@ runs:
         echo "JIRA_TOKEN=${{inputs.jira_token}}" >> $GITHUB_ENV
       shell: bash
     - name: "Run python"
-      run: "JIRA_TICKET_LINK=${{inputs.ticket_link}} python ${{ github.action_path }}/main.py"
+      run: "python ${{ github.action_path }}/main.py"
       shell: bash
