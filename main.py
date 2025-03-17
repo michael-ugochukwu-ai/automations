@@ -29,8 +29,8 @@ if __name__ == "__main__":
     jira_user = os.environ["JIRA_USER"]
     jira_url = os.environ["JIRA_URL"]
     jira_key = os.environ["JIRA_TICKET_KEY"]
-    jira_token = os.environ["JIRA_TOKEN"] # Hasn't been set ever even at this point
+    jira_token = os.environ["JIRA_TOKEN"] # Has been set now
     print(jira_url)
     print(jira_user)
-    print(jira_token)
+    print(len(jira_token))
     print(jira_key)
