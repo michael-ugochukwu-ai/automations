@@ -25,7 +25,7 @@ runs:
         echo "JIRA_TOKEN=${{inputs.jira_token}}" >> $GITHUB_ENV
       shell: bash
     - name: "Install requirements txt"
-      run: pip install -r requirements.txt
+      run: pip install -r ${{ github.action_path }}/requirements.txt
       shell: bash
     - name: "Run python"
       run: "python ${{ github.action_path }}/main.py"
