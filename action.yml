@@ -15,7 +15,7 @@ inputs:
     description: An auth token for the jira user
     required: True
 runs:
-  using: 'python'
-  main: 'main.py'
-  
+  using: 'composite'
+  steps:
+    - run: "python -m main.py"
   
