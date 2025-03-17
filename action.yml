@@ -2,7 +2,7 @@ name: Close jira ticket
 author: Michael Ugochukwu
 description: Closes a jira ticket associated with this PR upon merge
 inputs:
-  ticket_link:
+  ticket_key:
     description: 'The link of the ticket'
     requried: True
   jira_user:
@@ -19,7 +19,7 @@ runs:
   steps:
     - name: "Setup env vars"
       run: |
-        echo "JIRA_TICKET_LINK=${{inputs.ticket_link}}" >> $GITHUB_ENV
+        echo "JIRA_TICKET_KEY=${{inputs.ticket_key}}" >> $GITHUB_ENV
         echo "JIRA_URL=${{inputs.jira_url}}" >> $GITHUB_ENV
         echo "JIRA_USER=${{inputs.jira_user}}" >> $GITHUB_ENV
         echo "JIRA_TOKEN=${{inputs.jira_token}}" >> $GITHUB_ENV
