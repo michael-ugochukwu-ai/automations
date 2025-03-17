@@ -25,12 +25,4 @@ def change_status(client: JIRA, issue: Issue, destination_status:str = "complete
 
 if __name__ == "__main__":
     # pass # do nothing
-    # main()
-    jira_user = os.environ["JIRA_USER"]
-    jira_url = os.environ["JIRA_URL"]
-    jira_key = os.environ["JIRA_TICKET_KEY"]
-    jira_token = os.environ["JIRA_TOKEN"] # Has been set now
-    print(jira_url)
-    print(jira_user)
-    print(len(jira_token))
-    print(jira_key)
+    main()
