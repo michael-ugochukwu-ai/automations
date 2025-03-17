@@ -1,2 +1,3 @@
+import os
 print("Hello world")
-exit(0)
+print(os.environ["jira-token"])
