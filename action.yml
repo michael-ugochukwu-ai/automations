@@ -5,15 +5,6 @@ inputs:
   ticket_key:
     description: 'The link of the ticket'
     requried: True
-  jira_user:
-    description: The Jira user that will perform the action of closing the ticket
-    required: True
-  jira_url:
-    description: The url to your jira ticket
-    required: True
-  jira_token:
-    description: An auth token for the jira user
-    required: True
 runs:
   using: 'composite'
   steps:
@@ -22,7 +13,6 @@ runs:
         echo "JIRA_TICKET_KEY=${{inputs.ticket_key}}" >> $GITHUB_ENV
         echo "JIRA_URL=${{inputs.jira_url}}" >> $GITHUB_ENV
         echo "JIRA_USER=${{inputs.jira_user}}" >> $GITHUB_ENV
-        echo "JIRA_TOKEN=${{inputs.jira_token}}" >> $GITHUB_ENV
       shell: bash
     - name: "Install requirements txt"
       run: pip install -r ${{ github.action_path }}/requirements.txt
@@ -30,3 +20,7 @@ runs:
     - name: "Run python"
       run: "python ${{ github.action_path }}/main.py"
       shell: bash
+      env: 
+        JIRA_TOKEN: ${{secret.JIRA_TOKEN}}
+        JIRA_USER: "mosaic-connect-bot@ext.applied.co"
+        JIRA_URL: "https://appliedint-helix.atlassian.net"
