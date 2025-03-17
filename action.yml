@@ -17,13 +17,13 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    -name: Set env vars
-     run: |
+    - name: "Setup env vars"
+      run: |
       export JIRA_TICKET_LINK=${{inputs.ticket_link}}
       export JIRA_URL=${{inputs.jira_url}}
       export JIRA_USER=${{inputs.jira_user}}
       export JIRA_TOKEN=${{inputs.jira_token}}
-     shell: bash
+      shell: bash
     - name: "Run python"
       run: "python ${{ github.action_path }}/main.py"
       shell: bash
