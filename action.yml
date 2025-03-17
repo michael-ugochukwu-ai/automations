@@ -26,6 +26,7 @@ runs:
       shell: bash
     - name: "Install requirements txt"
       run: pip install -r requirements.txt
+      shell: bash
     - name: "Run python"
       run: "python ${{ github.action_path }}/main.py"
       shell: bash
