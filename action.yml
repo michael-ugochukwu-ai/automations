@@ -21,6 +21,6 @@ runs:
       run: "python ${{ github.action_path }}/main.py"
       shell: bash
       env: 
-        JIRA_TOKEN: ${{secret.JIRA_TOKEN}}
+        JIRA_TOKEN: ${{secretS.JIRA_TOKEN}}
         JIRA_USER: "mosaic-connect-bot@ext.applied.co"
         JIRA_URL: "https://appliedint-helix.atlassian.net"
