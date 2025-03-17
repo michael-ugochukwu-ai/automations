@@ -2,16 +2,16 @@ name: Close jira ticket
 author: Michael Ugochukwu
 description: Closes a jira ticket associated with this PR upon merge
 inputs:
-  ticket-link:
+  ticket_link:
     description: 'The link of the ticket'
     requried: True
-  jira-user:
+  jira_user:
     description: The Jira user that will perform the action of closing the ticket
     required: True
-  jira-url:
+  jira_url:
     description: The url to your jira ticket
     required: True
-  jira-token:
+  jira_token:
     description: An auth token for the jira user
     required: True
 runs:
@@ -19,8 +19,11 @@ runs:
   steps:
     -name: Set env vars
      run: |
-      export JIRA_TICKET_LINK=${{inputs.ticket-link}}
+      export JIRA_TICKET_LINK=${{inputs.ticket_link}}
+      export JIRA_URL=${{inputs.jira_url}}
+      export JIRA_USER=${{inputs.jira_user}}
+      export JIRA_TOKEN=${{inputs.jira_token}}
      shell: bash
     - name: "Run python"
-      run: "${{inputs.ticket-link}} python ${{ github.action_path }}/main.py"
+      run: "python ${{ github.action_path }}/main.py"
       shell: bash
