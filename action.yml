@@ -18,5 +18,5 @@ runs:
   using: 'composite'
   steps:
     - name: "Run python"
-      run: "python main.py"
+      run: "python ${{ github.action_path }}/main.py"
       shell: bash
