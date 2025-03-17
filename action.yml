@@ -17,6 +17,10 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    -name: Set env vars
+     run: |
+      export JIRA_TICKET_LINK=${{inputs.ticket-link}}
+     shell: bash
     - name: "Run python"
-      run: "python ${{ github.action_path }}/main.py"
+      run: "${{inputs.ticket-link}} python ${{ github.action_path }}/main.py"
       shell: bash
